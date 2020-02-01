@@ -12,16 +12,6 @@ const PORT = process.env.PORT || 3001;
 dotenv.config({ path: './config/conf.env' });
 mongoose.connection.on('err', console.error.bind(console, 'Database error.'));
 
-Server.set('SecretKey', 'NodeRESTAPI');
-Server.use(bodyParser.urlencoded({ extended: false }));
-
-
-Server.get('/', (req, res) => res.json({ "tutorial": "Build REST API with node.js" }));
-
-Server.use('/users', users);
-Server.use('/tech', validateUser, tech);
-Server.get('/favicon.ico', (req, res) => res.sendStatus(204));
-
 const validateUser = (req, res, next) => {
     jwt.verify(req.headers['x-access-token'], req.Server.get('SecretKey'), function (err, decoded) {
         if (err) {
@@ -33,6 +23,18 @@ const validateUser = (req, res, next) => {
     });
 
 }
+
+Server.set('SecretKey', 'NodeRESTAPI');
+Server.use(bodyParser.urlencoded({ extended: false }));
+
+
+Server.get('/', (req, res) => res.json({ "tutorial": "Build REST API with node.js" }));
+
+Server.use('/users', users);
+Server.use('/tech', validateUser, tech);
+Server.get('/favicon.ico', (req, res) => res.sendStatus(204));
+
+
 Server.use((req, res, next) => {
     let err = new Error('Not Found');
     err.status = 404;
