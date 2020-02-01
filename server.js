@@ -28,7 +28,7 @@ Server.set('SecretKey', 'NodeRESTAPI');
 Server.use(bodyParser.urlencoded({ extended: false }));
 
 
-Server.get('/', (req, res) => res.json({ "tutorial": "Build REST API with node.js" }));
+Server.get('/', (req, res) => res.json({ "message": "REST API w/ Node.js" }));
 
 Server.use('/users', users);
 Server.use('/tech', validateUser, tech);
@@ -50,4 +50,4 @@ Server.use((err, req, res, next) => {
         res.status(500).json({ message: "Something wrong :')" });
 });
 
-Server.listen(PORT, () => console.log(`Node server listening on port ${PORT}`));
+Server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
