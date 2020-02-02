@@ -1,6 +1,7 @@
 const express = require('express');
+const tech = require('../controllers/tech')
+
 const router = express.Router();
-const tech = require('../controllers/tech');
 
 router.get('/', tech.getAll);
 router.post('/', tech.create);

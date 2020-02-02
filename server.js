@@ -13,7 +13,7 @@ dotenv.config({ path: './config/conf.env' });
 mongoose.connection.on('err', console.error.bind(console, 'Database error.'));
 
 const validateUser = (req, res, next) => {
-    jwt.verify(req.headers['x-access-token'], req.Server.get('SecretKey'), function (err, decoded) {
+    jwt.verify(req.headers['x-access-token'], req.app.get('x-api-key'),  (err, decoded) => {
         if (err) {
             res.json({ status: "error", message: err.message, data: null });
         } else {
@@ -23,8 +23,7 @@ const validateUser = (req, res, next) => {
     });
 
 }
-
-Server.set('SecretKey', 'NodeRESTAPI');
+Server.set('x-api-key', 'nodeRestApi');
 Server.use(bodyParser.urlencoded({ extended: false }));
 
 

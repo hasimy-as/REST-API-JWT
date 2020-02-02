@@ -1,5 +1,9 @@
 const tech = require('../models/tech');
 
+/* 
+  @technoYurod tapi ini berasa ali
+*/
+
 module.exports = {
   getById: function (req, res, next) {
     console.log(req.body);
