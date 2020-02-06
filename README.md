@@ -7,7 +7,7 @@ To access you may use [POSTMAN](https://getpostman.com) or other apps to HTTP AP
 
 # Project Status
 
-[![Github License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hasimy-as/UKL-2/master/LICENSE)
+[![Github License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hasimy-as/REST-API-JWT/master/LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/)
 
 
@@ -36,7 +36,7 @@ Fourth, make sure your MongoDB services are available.
 
 
 
-## Licensed under the [MIT License](https://raw.githubusercontent.com/hasimy-as/UKL-2/master/LICENSE)
+## Licensed under the [MIT License](https://raw.githubusercontent.com/hasimy-as/REST-API-JWT/master/LICENSE)
 
 Happy coding!
 ~Hasimy
